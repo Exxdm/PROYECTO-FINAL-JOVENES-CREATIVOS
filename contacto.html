@@ -1,0 +1,91 @@
+<!-- Estructura de la página: metadatos, contenido y scripts. -->
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <link href="assets/logo.svg" rel="icon"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Contacto · Vitalia
+  </title>
+  <meta content="Escríbenos y resolvemos tus dudas." name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div id="site-header">
+  </div>
+  <main>
+   <section class="hero">
+    <div class="wrap">
+     <h1>
+      Hablemos
+     </h1>
+     <p class="lead">
+      Cuéntanos tu objetivo y te respondemos pronto.
+     </p>
+    </div>
+   </section>
+   <section>
+    <div class="wrap">
+     <form data-form="contact" novalidate="">
+      <label>
+       Nombre
+       <input autocomplete="name" name="nombre" required=""/>
+      </label>
+      <label>
+       Correo
+       <input autocomplete="email" name="email" required="" type="email"/>
+      </label>
+      <label>
+       Teléfono (opcional)
+       <input autocomplete="tel" name="telefono" type="tel"/>
+      </label>
+      <label>
+       Me interesa
+       <select name="interes" required="">
+        <option value="">
+         Elige una opción
+        </option>
+        <option>
+         Gimnasio
+        </option>
+        <option>
+         Deporte
+        </option>
+        <option>
+         Alimentación saludable
+        </option>
+       </select>
+      </label>
+      <label>
+       Mensaje
+       <textarea name="mensaje" required="" rows="4"></textarea>
+      </label>
+      <div class="status" hidden="" role="status">
+      </div>
+      <button class="btn" type="submit">
+       Enviar mensaje
+      </button>
+     </form>
+    </div>
+   </section>
+  </main>
+  <div id="site-footer">
+  </div>
+  <script src="js/config.js">
+  </script>
+  <script src="js/api.js">
+  </script>
+  <script src="js/layout.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+  <script src="js/chatbot.js">
+  </script>
+  <script src="js/forms.js">
+  </script>
+ </body>
+</html>
+

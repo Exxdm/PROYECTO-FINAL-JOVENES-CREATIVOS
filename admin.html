@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Administración · Vitalia</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <main id="login-view" class="login-shell">
+    <section class="login-card">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt=""><span>VITALIA</span></a>
+      <h1>Iniciar sesión<span>.</span></h1>
+      <form id="login-form">
+        <label>Correo de administrador<input name="email" type="email" autocomplete="username" required></label>
+        <label>Contraseña<input name="password" type="password" autocomplete="current-password" required></label>
+        <p id="login-error" class="notice error" role="alert" hidden></p>
+        <button class="button primary" type="submit">Iniciar sesión</button>
+      </form>
+      <a class="back-link" href="index.html" target="_blank" rel="noopener noreferrer">Abrir sitio ↗</a>
+    </section>
+</main>
+
+  <div id="admin-view" class="admin-shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt=""><span>VITALIA</span></a>
+      <p class="sidebar-label">GESTIÓN</p>
+      <nav class="side-nav" aria-label="Administración">
+        <button class="side-link selected" data-section="overview"><span aria-hidden="true">⌂</span>Resumen</button>
+        <button class="side-link" data-section="leads"><span aria-hidden="true">▤</span>Formularios</button>
+        <button class="side-link" data-section="stories"><span aria-hidden="true">✳</span>Historias</button>
+      </nav>
+      <div class="sidebar-bottom"><a href="index.html" target="_blank" rel="noopener noreferrer">Ver sitio <span aria-hidden="true">↗</span></a><button id="logout-button" class="logout">Cerrar sesión</button></div>
+    </aside>
+    <main class="workspace">
+      <header class="topbar"><div><h1 id="page-title">Resumen</h1></div><span class="admin-badge"><i></i> Admin</span></header>
+      <div id="global-notice" class="notice" role="status" hidden></div>
+      <section id="section-overview" class="section-content">
+        <div class="stat-grid"><article class="stat-card"><span>Contactos</span><strong id="contact-count">—</strong></article><article class="stat-card"><span>Alianzas</span><strong id="partner-count">—</strong></article><article class="stat-card accent"><span>Historias</span><strong id="story-count">—</strong></article></div>
+        <div class="panel"><div class="panel-head"><div><h2>Actividad reciente</h2></div><button class="text-button" data-go="leads">Ver todos <span aria-hidden="true">→</span></button></div><div id="recent-leads" class="table-wrap"></div></div>
+      </section>
+      <section id="section-leads" class="section-content" hidden><div class="panel"><div class="panel-head"><div><p class="eyebrow">CONTACTO Y ALIANZAS</p><h2>Formularios recibidos</h2></div><select id="lead-filter" aria-label="Filtrar formularios"><option value="all">Todos los formularios</option><option value="contact">Contacto</option><option value="partner">Alianzas</option></select></div><div id="leads-table" class="table-wrap"></div></div></section>
+      <section id="section-stories" class="section-content" hidden><div class="stories-layout"><div class="panel"><div class="panel-head"><div><h2 id="story-form-title">Añadir historia</h2></div></div><form id="story-form" class="story-form"><input type="hidden" name="id"><label>Título<input name="title" maxlength="100" required placeholder="Un nuevo comienzo"></label><label>Persona<input name="person" maxlength="80" required placeholder="Nombre"></label><label>Historia<textarea name="description" maxlength="1200" rows="4" required placeholder="Escribe la historia"></textarea></label><label>Resultado<input name="result" maxlength="120" placeholder="Un avance logrado"></label><label>Foto<input name="image" type="file" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG o WebP · máximo 5 MB</small></label><p id="story-error" class="notice error" role="alert" hidden></p><div class="form-actions"><button class="button primary" type="submit">Guardar</button><button id="cancel-edit" class="button secondary" type="button" hidden>Cancelar</button></div></form></div><div id="stories-list" class="story-list"></div></div></section>
+    </main>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
